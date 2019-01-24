@@ -1,0 +1,30 @@
+﻿  Game.cpp
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(378): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(379): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(380): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(389): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(390): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(391): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(402): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(403): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(404): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(413): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(414): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(415): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  SFMLOpenGL.vcxproj -> G:\Gameplay-Programming-Lab-10\Debug\SFMLOpenGL.exe
+  C:\SFML-2.5.0\bin\openal32.dll
+  C:\SFML-2.5.0\bin\sfml-audio-2.dll
+  C:\SFML-2.5.0\bin\sfml-audio-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-graphics-2.dll
+  C:\SFML-2.5.0\bin\sfml-graphics-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-network-2.dll
+  C:\SFML-2.5.0\bin\sfml-network-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-system-2.dll
+  C:\SFML-2.5.0\bin\sfml-system-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-window-2.dll
+  C:\SFML-2.5.0\bin\sfml-window-d-2.dll
+  11 File(s) copied
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\glew32.dll
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\glewinfo.exe
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\visualinfo.exe
+  3 File(s) copied
