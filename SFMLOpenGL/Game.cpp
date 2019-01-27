@@ -41,8 +41,9 @@ typedef struct
 } Vert;
 
 Vert vertex[36];
+Vert finalVert[36];
+MyVector3 translation = { 1.0,1.0,1.0 };
 GLubyte triangles[36];
-
 /* Variable to hold the VBO identifier and shader data */
 GLuint	index, //Index to draw
 		vsid, //Vertex Shader ID
@@ -80,7 +81,7 @@ void Game::initialize()
 	//vertex[2].color[3] = 1.0f;
 
 
-	/*for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 36; i++)
 	{
 		vertex[i].color[0] = 0.0f;
 		vertex[i].color[1] = 0.0f;
@@ -88,7 +89,7 @@ void Game::initialize()
 		vertex[i].color[3] = 1.0f;
 
 	}
-*/
+
 
 	/*Index of Poly / Triangle to Draw */
 	for (int i = 0; i < 36; i++)
@@ -96,7 +97,12 @@ void Game::initialize()
 		triangles[i] = i;
 	}
 
-
+	for (int i = 0; i < 36; i++)
+	{
+		finalVert[i] = vertex[i];
+		finalVert[i].coordinate[0] += translation.x;
+		finalVert[i].coordinate[1] += translation.y;
+	}
 
 
 	/* Create a new VBO using VBO id */
@@ -147,7 +153,7 @@ void Game::initialize()
 		"in vec4 color;"
 		"out vec4 fColor;"
 		"void main() {"
-		"	fColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);"
+		" fColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);"		// Red
 		"}"; //Fragment Shader Src
 
 	DEBUG_MSG("Setting Up Fragment Shader");
@@ -210,30 +216,9 @@ void Game::update()
 			flip = false;
 	}
 
-	if (flip)
-	{
-		rotationAngle += 0.005f;
-
-		if (rotationAngle > 360.0f)
-		{
-			rotationAngle -= 360.0f;
-		}
-	}
+	
 	keyInputs();
 
-
-	//Change vertex data
-	/*vertex[0].coordinate[0] += -0.0001f;
-	vertex[0].coordinate[1] += -0.0001f;
-	vertex[0].coordinate[2] += -0.0001f;
-
-	vertex[1].coordinate[0] += -0.0001f;
-	vertex[1].coordinate[1] += -0.0001f;
-	vertex[1].coordinate[2] += -0.0001f;
-
-	vertex[2].coordinate[0] += -0.0001f;
-	vertex[2].coordinate[1] += -0.0001f;
-	vertex[2].coordinate[2] += -0.0001f;*/
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -291,76 +276,151 @@ void Game::unload()
 void Game::points()
 {
 	/// <summary>
-	/// front left triangle
+	/// front 
 	/// </summary>
-	//bottom left
 	vertex[0].coordinate[0] = -0.5f;
 	vertex[0].coordinate[1] = -0.5f;
-	vertex[0].coordinate[2] = 0.5f;
-	//top left
+	vertex[0].coordinate[2] = -0.5f;
+
 	vertex[1].coordinate[0] = -0.5f;
 	vertex[1].coordinate[1] = 0.5f;
-	vertex[1].coordinate[2] = 0.5f;
-	//top right
+	vertex[1].coordinate[2] = -0.5f;
+
 	vertex[2].coordinate[0] = 0.5f;
 	vertex[2].coordinate[1] = 0.5f;
-	vertex[2].coordinate[2] = 0.5f;
-	/// <summary>
-	/// front right triangle
-	/// </summary>
-	vertex[3].coordinate[0] = -0.5f;
-	vertex[3].coordinate[1] = -0.5f;
-	vertex[3].coordinate[2] = 0.5f;
+	vertex[2].coordinate[2] = -0.5f;
+
+	vertex[3].coordinate[0] = 0.5f;
+	vertex[3].coordinate[1] = 0.5f;
+	vertex[3].coordinate[2] = -0.5f;
 
 	vertex[4].coordinate[0] = 0.5f;
 	vertex[4].coordinate[1] = -0.5f;
-	vertex[4].coordinate[2] = 0.5f;
+	vertex[4].coordinate[2] = -0.5f;
 
-	vertex[5].coordinate[0] = 0.5f;
-	vertex[5].coordinate[1] = 0.5f;
-	vertex[5].coordinate[2] = 0.5f;
-	/// <summary>
-	/// back left triangle
-	/// </summary>
+	vertex[5].coordinate[0] = -0.5f;
+	vertex[5].coordinate[1] = -0.5f;
+	vertex[5].coordinate[2] = -0.5f;
+
 	vertex[6].coordinate[0] = -0.5f;
 	vertex[6].coordinate[1] = -0.5f;
-	vertex[6].coordinate[2] = -0.5f;
-	//top left
+	vertex[6].coordinate[2] = 0.5f;
+
 	vertex[7].coordinate[0] = -0.5f;
 	vertex[7].coordinate[1] = 0.5f;
-	vertex[7].coordinate[2] = -0.5f;
-	//top right
+	vertex[7].coordinate[2] = 0.5f;
+
 	vertex[8].coordinate[0] = 0.5f;
 	vertex[8].coordinate[1] = 0.5f;
-	vertex[8].coordinate[2] = -0.5f;
-	/// <summary>
-	/// back right triangle
-	/// </summary>
-	vertex[9].coordinate[0] = -0.5f;
-	vertex[9].coordinate[1] = -0.5f;
-	vertex[9].coordinate[2] = -0.5f;
+	vertex[8].coordinate[2] = 0.5f;
+
+	vertex[9].coordinate[0] = 0.5f;
+	vertex[9].coordinate[1] = 0.5f;
+	vertex[9].coordinate[2] = 0.5f;
 
 	vertex[10].coordinate[0] = 0.5f;
 	vertex[10].coordinate[1] = -0.5f;
-	vertex[10].coordinate[2] = -0.5f;
+	vertex[10].coordinate[2] = 0.5f;
 
-	vertex[11].coordinate[0] = 0.5f;
-	vertex[11].coordinate[1] = 0.5f;
-	vertex[11].coordinate[2] = -0.5f;
-	/// <summary>
-	/// right hand side bottom
-	/// </summary>
-	vertex[12].coordinate[0] = 0.5f;
+	vertex[11].coordinate[0] = -0.5f;
+	vertex[11].coordinate[1] = -0.5f;
+	vertex[11].coordinate[2] = 0.5f;
+	
+	vertex[12].coordinate[0] = -0.5f;
 	vertex[12].coordinate[1] = -0.5f;
-	vertex[12].coordinate[2] = 0.5f;
+	vertex[12].coordinate[2] = -0.5f;
 
-	vertex[13].coordinate[0] = 0.5f;
-	vertex[13].coordinate[1] = 0.5f;
-	vertex[13].coordinate[2] = 0.5f;
+	vertex[13].coordinate[0] = -0.5f;
+	vertex[13].coordinate[1] = 0.5f;		
+	vertex[13].coordinate[2] = -0.5f;
 
-	vertex[14].coordinate[0] = 0.5f;
+	vertex[14].coordinate[0] = -0.5f;
 	vertex[14].coordinate[1] = 0.5f;
-	vertex[14].coordinate[2] = -0.5f;
+	vertex[14].coordinate[2] = 0.5f;
+
+	vertex[15].coordinate[0] = -0.5f;
+	vertex[15].coordinate[1] = 0.5f;
+	vertex[15].coordinate[2] = 0.5f;
+
+	vertex[16].coordinate[0] = -0.5f;
+	vertex[16].coordinate[1] = -0.5f;
+	vertex[16].coordinate[2] = 0.5f;
+
+	vertex[17].coordinate[0] = -0.5f;
+	vertex[17].coordinate[1] = -0.5f;
+	vertex[17].coordinate[2] = -0.5f;
+
+	vertex[18].coordinate[0] = 0.5f;
+	vertex[18].coordinate[1] = -0.5f;
+	vertex[18].coordinate[2] = 0.5f;
+
+	vertex[19].coordinate[0] = 0.5f;
+	vertex[19].coordinate[1] = 0.5f;
+	vertex[19].coordinate[2] = 0.5f;
+
+	vertex[20].coordinate[0] = 0.5f;
+	vertex[20].coordinate[1] = 0.5f;
+	vertex[20].coordinate[2] = -0.5f;
+
+	vertex[21].coordinate[0] = 0.5f;
+	vertex[21].coordinate[1] = 0.5f;
+	vertex[21].coordinate[2] = -0.5f;
+
+	vertex[22].coordinate[0] = 0.5f;
+	vertex[22].coordinate[1] = -0.5f;
+	vertex[22].coordinate[2] = -0.5f;
+
+	vertex[23].coordinate[0] = 0.5f;
+	vertex[23].coordinate[1] = -0.5f;
+	vertex[23].coordinate[2] = 0.5f;
+
+	vertex[24].coordinate[0] = -0.5f;
+	vertex[24].coordinate[1] = -0.5f;
+	vertex[24].coordinate[2] = -0.5f;
+
+	vertex[25].coordinate[0] = 0.5f;
+	vertex[25].coordinate[1] = -0.5f;		
+	vertex[25].coordinate[2] = -0.5f;
+
+	vertex[26].coordinate[0] = 0.5f;
+	vertex[26].coordinate[1] = -0.5f;
+	vertex[26].coordinate[2] = 0.5f;
+
+	vertex[27].coordinate[0] = 0.5f;
+	vertex[27].coordinate[1] = -0.5f;
+	vertex[27].coordinate[2] = 0.5f;
+
+	vertex[28].coordinate[0] = -0.5f;
+	vertex[28].coordinate[1] = -0.5f;
+	vertex[28].coordinate[2] = 0.5f;
+
+	vertex[29].coordinate[0] = -0.5f;
+	vertex[29].coordinate[1] = -0.5f;
+	vertex[29].coordinate[2] = -0.5f;
+	//
+	vertex[30].coordinate[0] = -0.5f;
+	vertex[30].coordinate[1] = 0.5f;
+	vertex[30].coordinate[2] = 0.5f;
+
+	vertex[31].coordinate[0] = 0.5f;
+	vertex[31].coordinate[1] = 0.5f;
+	vertex[31].coordinate[2] = 0.5f;
+
+	vertex[32].coordinate[0] = 0.5f;
+	vertex[32].coordinate[1] = 0.5f;
+	vertex[32].coordinate[2] = -0.5f;
+
+	vertex[33].coordinate[0] = 0.5f;
+	vertex[33].coordinate[1] = 0.5f;
+	vertex[33].coordinate[2] = -0.5f;
+
+	vertex[34].coordinate[0] = -0.5f;
+	vertex[34].coordinate[1] = 0.5f;
+	vertex[34].coordinate[2] = -0.5f;
+
+	vertex[35].coordinate[0] = -0.5f;
+	vertex[35].coordinate[1] = 0.5f;
+	vertex[35].coordinate[2] = 0.5f;;
 
 }
 void Game::keyInputs()
@@ -415,4 +475,89 @@ void Game::keyInputs()
 			vertex[i].coordinate[2] = vec.z;
 		}
 	}
+
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+
+		
+
+			translation = (MyMatrix3::translation(MyVector3{ 0,0.01, 0 }) *translation);
+		
+		
+	}
+	/* <summary>
+	 key presses for the translation down
+	 </summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+
+		
+			translation = (MyMatrix3::translation(MyVector3{ 0, -0.01, 0 }) * translation);
+		
+		
+			
+		
+
+	}
+	/*<summary>
+	key presses for the translation left
+	</summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+
+
+			translation = (MyMatrix3::translation(MyVector3{ -0.01, 0, 0 }) * translation);
+		
+		
+			
+		
+
+	}
+	/* <summary>
+	 key presses for the translation Right
+	 </summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		
+
+		translation = (MyMatrix3::translation(MyVector3{ 0.01, 0, 0 }) * translation);
+		
+		
+			
+		
+
+	}
+
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		for (int i = 0; i < 36; i++)
+		{
+			MyVector3 vec = { vertex[i].coordinate[0] , vertex[i].coordinate[1]	, vertex[i].coordinate[2] };
+			vec = (MyMatrix3::scale(1.01) * vec);
+			vertex[i].coordinate[0] = vec.x;
+			vertex[i].coordinate[1] = vec.y;
+			vertex[i].coordinate[2] = vec.z;
+		}
+
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		for (int i = 0; i < 36; i++)
+		{
+			MyVector3 vec = { vertex[i].coordinate[0] , vertex[i].coordinate[1]	, vertex[i].coordinate[2] };
+			vec = (MyMatrix3::scale(0.99) * vec);
+			vertex[i].coordinate[0] = vec.x;
+			vertex[i].coordinate[1] = vec.y;
+			vertex[i].coordinate[2] = vec.z;
+		}
+
+	}
+	for (int i = 0; i < 36; i++)
+	{
+		finalVert[i] = vertex[i];
+		finalVert[i].coordinate[0] += translation.x;
+		finalVert[i].coordinate[1] += translation.y;
+	}
+
 }
