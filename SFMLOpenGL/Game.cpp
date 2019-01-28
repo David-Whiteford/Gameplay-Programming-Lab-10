@@ -34,6 +34,31 @@ void Game::run()
 
 }
 
+string Game::load_file(const std::string & src)
+{
+	ifstream file;
+	file.open(((src).c_str()));
+	string line;
+	string output;
+
+	if (file.fail())
+	{
+		cout << "fail" << endl;
+	}
+	if (file.is_open())
+	{
+		while (!file.eof())
+		{
+			getline(file, line);
+			output.append(line + "\n");
+			
+		}
+	}
+
+	cout << output << endl;
+	return output;
+}
+
 typedef struct
 {
 	float coordinate[3];
@@ -63,32 +88,6 @@ void Game::initialize()
 
 	glewInit();
 	points();
-	
-
-	//vertex[0].color[0] = 0.0f;
-	//vertex[0].color[1] = 0.0f;
-	//vertex[0].color[2] = 0.0f;
-	//vertex[0].color[3] = 1.0f;
-
-	//vertex[1].color[0] = 0.0f;
-	//vertex[1].color[1] = 0.0f;
-	//vertex[1].color[2] = 0.0f;
-	//vertex[1].color[3] = 1.0f;
-
-	//vertex[2].color[0] = 0.0f;
-	//vertex[2].color[1] = 0.0f;
-	//vertex[2].color[2] = 0.0f;
-	//vertex[2].color[3] = 1.0f;
-
-
-	for (int i = 0; i < 36; i++)
-	{
-		vertex[i].color[0] = 0.0f;
-		vertex[i].color[1] = 0.0f;
-		vertex[i].color[2] = 0.0f;
-		vertex[i].color[3] = 1.0f;
-
-	}
 
 
 	/*Index of Poly / Triangle to Draw */
@@ -121,14 +120,9 @@ void Game::initialize()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	/* Vertex Shader which would normally be loaded from an external file */
-	const char* vs_src = "#version 400\n\r"
-		"in vec4 sv_position;"
-		"in vec4 sv_color;"
-		"out vec4 color;"
-		"void main() {"
-		"	color = sv_color;"
-		"	gl_Position = sv_position;"
-		"}"; //Vertex Shader Src
+	string s = load_file("file.txt");
+	const char* vs_src = s.c_str();
+	
 
 	DEBUG_MSG("Setting Up Vertex Shader");
 
@@ -149,12 +143,20 @@ void Game::initialize()
 	}
 
 	/* Fragment Shader which would normally be loaded from an external file */
-	const char* fs_src = "#version 400\n\r"
-		"in vec4 color;"
-		"out vec4 fColor;"
-		"void main() {"
-		" fColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);"		// Red
-		"}"; //Fragment Shader Src
+	string c = load_file("colour.txt");
+	const char* fs_src = c.c_str();
+		
+		//
+		//"#version 400\n\r"
+		//"in vec4 color;"
+		//"out vec4 fColor;"
+		//"void main()"
+		//"{"
+		//" fColor = vec4(0.0f, 0.0f, 1.0f, 1.0f);"		// Blue
+		//"}"
+		
+		
+		; //Fragment Shader Src
 
 	DEBUG_MSG("Setting Up Fragment Shader");
 
@@ -218,7 +220,7 @@ void Game::update()
 
 	
 	keyInputs();
-
+	
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -475,59 +477,6 @@ void Game::keyInputs()
 			vertex[i].coordinate[2] = vec.z;
 		}
 	}
-
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	{
-
-		
-
-			translation = (MyMatrix3::translation(MyVector3{ 0,0.01, 0 }) *translation);
-		
-		
-	}
-	/* <summary>
-	 key presses for the translation down
-	 </summary>*/
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-
-		
-			translation = (MyMatrix3::translation(MyVector3{ 0, -0.01, 0 }) * translation);
-		
-		
-			
-		
-
-	}
-	/*<summary>
-	key presses for the translation left
-	</summary>*/
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-
-
-			translation = (MyMatrix3::translation(MyVector3{ -0.01, 0, 0 }) * translation);
-		
-		
-			
-		
-
-	}
-	/* <summary>
-	 key presses for the translation Right
-	 </summary>*/
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		
-
-		translation = (MyMatrix3::translation(MyVector3{ 0.01, 0, 0 }) * translation);
-		
-		
-			
-		
-
-	}
-
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 	{
 		for (int i = 0; i < 36; i++)
@@ -553,11 +502,48 @@ void Game::keyInputs()
 		}
 
 	}
+
+
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+
+		
+
+			translation = (MyMatrix3::translation(MyVector3{ 0,0.01, 0 }) *translation);
+		
+		
+	}
+	/* <summary>
+	 key presses for the translation down
+	 </summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+			translation = (MyMatrix3::translation(MyVector3{ 0, -0.01, 0 }) * translation);
+	}
+	/*<summary>
+	key presses for the translation left
+	</summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+
+
+			translation = (MyMatrix3::translation(MyVector3{ -0.01, 0, 0 }) * translation);
+
+	}
+	/* <summary>
+	 key presses for the translation Right
+	 </summary>*/
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		translation = (MyMatrix3::translation(MyVector3{ 0.01, 0, 0 }) * translation);
+	}
+
 	for (int i = 0; i < 36; i++)
 	{
 		finalVert[i] = vertex[i];
 		finalVert[i].coordinate[0] += translation.x;
 		finalVert[i].coordinate[1] += translation.y;
 	}
+	
 
 }

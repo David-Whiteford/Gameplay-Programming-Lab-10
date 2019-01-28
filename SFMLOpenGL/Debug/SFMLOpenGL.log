@@ -1,29 +1,40 @@
 ﻿  Game.cpp
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(103): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(104): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(438): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(439): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(440): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(449): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(450): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(451): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(462): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(463): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(464): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(473): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(474): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(475): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(537): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(539): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(550): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(552): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(559): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\new folder (3)\gameplay-programming-lab-10\sfmlopengl\game.cpp(560): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-  SFMLOpenGL.vcxproj -> C:\New folder (3)\Gameplay-Programming-Lab-10\Debug\SFMLOpenGL.exe
-  Invalid number of parameters
-  Invalid number of parameters
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(138,5): error MSB3073: The command "xcopy C:\SFML-2.5.0\bin C:\New folder (3)\Gameplay-Programming-Lab-10\Debug\ /C /Y
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(138,5): error MSB3073: xcopy C:\Users\dave2\Downloads\glew-2.1.0-win32 (1)\glew-2.1.0\bin\Release\Win32 C:\New folder (3)\Gameplay-Programming-Lab-10\Debug\ /C /Y
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(138,5): error MSB3073: :VCEnd" exited with code 4.
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(102): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(103): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(440): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(441): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(442): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(451): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(452): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(453): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(464): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(465): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(466): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(475): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(476): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(477): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(486): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(487): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(488): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(499): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(500): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(501): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(544): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+g:\gameplay-programming-lab-10\sfmlopengl\game.cpp(545): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  SFMLOpenGL.vcxproj -> G:\Gameplay-Programming-Lab-10\Debug\SFMLOpenGL.exe
+  C:\SFML-2.5.0\bin\openal32.dll
+  C:\SFML-2.5.0\bin\sfml-audio-2.dll
+  C:\SFML-2.5.0\bin\sfml-audio-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-graphics-2.dll
+  C:\SFML-2.5.0\bin\sfml-graphics-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-network-2.dll
+  C:\SFML-2.5.0\bin\sfml-network-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-system-2.dll
+  C:\SFML-2.5.0\bin\sfml-system-d-2.dll
+  C:\SFML-2.5.0\bin\sfml-window-2.dll
+  C:\SFML-2.5.0\bin\sfml-window-d-2.dll
+  11 File(s) copied
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\glew32.dll
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\glewinfo.exe
+  C:\Users\c00204740\Downloads\glew-2.1.0-win32\glew-2.1.0\bin\Release\Win32\visualinfo.exe
+  3 File(s) copied

@@ -8,6 +8,8 @@
 #include <GL/wglew.h>
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
+#include <fstream>
+
 
 #include "MyMatrix3.h"
 #include "MyVector3.h"
@@ -23,6 +25,10 @@ public:
 	Game();
 	~Game();
 	void run();
+	string load_file(const std::string &src);
+	string s;
+	string line;
+	string output;
 private:
 	Window window;
 	bool isRunning = false;
